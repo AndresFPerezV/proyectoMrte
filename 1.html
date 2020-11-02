@@ -1,0 +1,34 @@
+<html>
+<head>
+
+</head>
+
+<body onLoad="ejecutar()">
+    <div id="moviendose" style="position:absolute;">
+    <img src="C:\Users\PC GAMER\Downloads\proyectoMrte\img\imgUno.png" alt="moviendose" />
+    </div>
+    <script type="text/javascript">
+    inicio = 0;
+    orden = 0;
+    nx = 1;
+    nx = 1;
+    velocidad = 10;
+    function ejecutar() {
+    document.getElementById("moviendose").style.left = inicio;
+    document.getElementById("moviendose").style.top = orden;
+    largeur = (navigator.appName != "Microsoft Internet Explorer")? window.innerWidth : document.body.offsetWidth;
+    hauteur = (navigator.appName != "Microsoft Internet Explorer")? window.innerHeight : document.body.offsetHeight;
+    bas = (navigator.appName != "Microsoft Internet Explorer")? document.getElementById('moviendose').clientHeight : document.getElementById('moviendose').offsetHeight;
+    droite = (navigator.appName != "Microsoft Internet Explorer")? document.getElementById('moviendose').clientWidth : document.getElementById('moviendose').offsetWidth;
+    if ((orden + bas) >= hauteur) ny = -1;
+    if ((inicio + droite) >= largeur) nx = -1;
+    if (orden <= 0) ny = 1;
+    if (inicio <= 0) nx = 1;
+    inicio += nx;
+    orden += ny;
+    setTimeout('ejecutar()',velocidad);
+    }
+    </script>
+    </body>
+
+</html>
